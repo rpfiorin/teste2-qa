@@ -1,9 +1,10 @@
 from pages.register_page import RegisterPage
 
 """"
-    Caso de teste da reproducao valida do cadastro de conta 
+    Caso de teste da reproducao valida no cadastro de conta do cliente, apos
+    invocar POM definido
 """
-def test_valid_registers(page,  test_data: dict, user_password: str):
+def test_valid_registers(page, test_data: dict, user_password: str):
     register = RegisterPage(page)
 
     register.access_home()

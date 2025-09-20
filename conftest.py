@@ -10,7 +10,9 @@ load_dotenv()
 @pytest.fixture
 def context(browser):
     web_context = browser.new_context(
-        base_url='https://bugbank.netlify.app', record_video_dir='videos')
+        base_url='https://bugbank.netlify.app',
+        record_video_dir='videos'
+    )
     # gera contexto para poder ser utilizado em todos os testes
     yield web_context
     web_context.close()
@@ -25,9 +27,10 @@ def page(context):
 
 
 """
-    scope='session' faz com que o arquivo seja lido apenas uma vez por toda as
-    execucoes dos testes
+    com scope='session', os arquivos abaixo sao lidos apenas uma vez para todas 
+    as execucoes dos testes
 """
+
 
 @pytest.fixture(scope="session")
 def test_data():

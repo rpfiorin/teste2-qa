@@ -5,7 +5,7 @@ import time
 
 class RegisterPage(BasePage):
     def __init__(self, page):
-        # inicializa mapeamento da base page ao instanciar
+        # inicializa mapeamento da base_page ao instanciar
         super().__init__(page)
 
         self.button_back = page.locator("#btnBackButton")
@@ -15,6 +15,7 @@ class RegisterPage(BasePage):
         self.input_password = page.get_by_placeholder("Informe sua senha")
         self.input_repeat_password = page.get_by_placeholder(
             "Informe a confirmação da senha")
+        self.button_eye = page.locator(".login__eye")
         self.toggle_balance = page.locator("#toggleAddBalance")
         self.button_register = page.get_by_role("button", name="Cadastrar")
         self.text_modal = page.locator("#modalText")
@@ -27,6 +28,7 @@ class RegisterPage(BasePage):
         self.input_password.last.fill(password)
         self.input_repeat_password.fill(password)
 
+        self.button_eye.last.click()
         self.button_register.click()
 
     def create_account_with_balance(self, email='', name='', password=''):
@@ -43,4 +45,5 @@ class RegisterPage(BasePage):
     def check_success_account_creation(self, message: str):
         # ligeira pausa para constar exibicao do modal na evidencia em video
         time.sleep(0.5)
+
         expect(self.text_modal).to_contain_text(message)
