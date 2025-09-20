@@ -1,0 +1,46 @@
+from pages.base_page import BasePage
+from playwright.sync_api import expect
+import time
+
+
+class RegisterPage(BasePage):
+    def __init__(self, page):
+        # inicializa mapeamento da base page ao instanciar
+        super().__init__(page)
+
+        self.button_back = page.locator("#btnBackButton")
+        # mapeia todos os elementos a interagir
+        self.input_email = page.get_by_placeholder("Informe seu e-mail")
+        self.input_name = page.get_by_placeholder("Informe seu Nome")
+        self.input_password = page.get_by_placeholder("Informe sua senha")
+        self.input_repeat_password = page.get_by_placeholder(
+            "Informe a confirmação da senha")
+        self.toggle_balance = page.locator("#toggleAddBalance")
+        self.button_register = page.get_by_role("button", name="Cadastrar")
+        self.text_modal = page.locator("#modalText")
+
+    def create_account_without_balance(self, email='', name='', password=''):
+        expect(self.button_back).to_be_visible()
+        # preenche os campos apos verificar formulario e registra conta s/ saldo
+        self.input_email.last.fill(email)
+        self.input_name.fill(name)
+        self.input_password.last.fill(password)
+        self.input_repeat_password.fill(password)
+
+        self.button_register.click()
+
+    def create_account_with_balance(self, email='', name='', password=''):
+        expect(self.button_back).to_be_visible()
+        # preenche os campos apos verificar formulario e registra conta c/ saldo
+        self.input_email.last.fill(email)
+        self.input_name.fill(name)
+        self.input_password.last.fill(password)
+        self.input_repeat_password.fill(password)
+
+        self.toggle_balance.click()
+        self.button_register.click()
+
+    def check_success_account_creation(self, message: str):
+        # ligeira pausa para constar exibicao do modal na evidencia em video
+        time.sleep(0.5)
+        expect(self.text_modal).to_contain_text(message)

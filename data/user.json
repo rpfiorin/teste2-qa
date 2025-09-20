@@ -1,0 +1,10 @@
+{
+  "valid_user": {
+    "email": "joao_valido@exemplo.com",
+    "fullName": "João da Silva"
+  },
+  "invalid_user": {
+    "email": "usuario_invalido",
+    "fullName": "Usuário Inválido"
+  }
+}
