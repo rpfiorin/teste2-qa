@@ -43,7 +43,7 @@ def web_page(page: Page):
 @pytest.fixture(scope="session")
 def test_data():
     # Carrega dados do arquivo JSON para testá-los.
-    with open("data/user.json", encoding="utf-8") as f:
+    with open("data/users.json", encoding="utf-8") as f:
         data = json.load(f)
 
     # Retorna os dados carregados como um dicionário
