@@ -4,7 +4,7 @@
     "fullName": "João da Silva"
   },
   "invalid_user": {
-    "email": "usuario_invalido",
+    "email": "usuario_invalido@",
     "fullName": "Usuário Inválido"
   }
 }

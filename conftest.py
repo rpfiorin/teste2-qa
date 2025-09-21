@@ -1,16 +1,18 @@
-import pytest
+# includes necessarios no projeto
 import json
 import os
+import pytest
 from dotenv import load_dotenv
+from pages.base_page import BasePage
+from playwright.sync_api import Page
 
-# buscar arquivo .env
+# busca arquivo .env
 load_dotenv()
 
 
 @pytest.fixture
 def context(browser):
-    web_context = browser.new_context(
-        base_url='https://bugbank.netlify.app',
+    web_context = browser.new_context(base_url='https://bugbank.netlify.app',
         record_video_dir='videos'
     )
     # gera contexto para poder ser utilizado em todos os testes
@@ -19,18 +21,27 @@ def context(browser):
 
 
 @pytest.fixture
-def page(context):
-    web_page = context.new_page()
+def tab(context):
+    pages = context.new_page()
     # gera criacao de pagina para ser utilizada em todos os testes
-    yield web_page
-    web_page.close()
+    yield pages
+
+    pages.close()
+
+
+@pytest.fixture
+def web_page(page: Page):
+    tab_page = BasePage(page)
+    # este codigo serve como um gancho (hook)
+    tab_page.access_home()
+
+    yield tab_page
 
 
 """
     com scope='session', os arquivos abaixo sao lidos apenas uma vez para todas 
     as execucoes dos testes
 """
-
 
 @pytest.fixture(scope="session")
 def test_data():
@@ -49,6 +60,6 @@ def user_password():
     if not password:
         pytest.fail(
             "Erro: A variável de ambiente 'PASSWORD_TO_REGISTER' não foi "
-            "encontrada. Verifique o arquivo .env")
+            "encontrada. Verifique o conteúdo do arquivo .env")
 
     return password

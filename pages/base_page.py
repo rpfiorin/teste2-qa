@@ -6,5 +6,5 @@ class BasePage:
     def access_home(self):
         self.page.goto('/#')
 
-    def access_register(self):
+    def access_registration(self):
         self.button_go_to_register.click()

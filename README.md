@@ -2,11 +2,11 @@
   <img src="./.github/logo.png" alt="poster">
 </p>
 
-# Teste prático - Automação Web com Playwright em Python
+# Teste prático - Automação de testes Web com playwright em Python (cadastro no BugBank)
 
 ## Preparação 📍
 1. Primeiramente, clone este projeto com opção HTTPS ou SSH.
-2. A automação foi desenvolvida em cima da versão 3.10 do python, logo, certifique-se de estar com esta versão em seu SO ou instale-a pelo diretório 'py' (caso utilize Windows). Para linux, consulte o respectivo procedimento de acordo com a distribuição utilizada.
+2. A automação foi desenvolvida em cima da versão 3.10 do Python, logo, certifique-se de estar com esta versão em seu SO ou instale-a pelo diretório 'py' (caso utilize Windows). Para linux, consulte o respectivo procedimento de acordo com a distribuição utilizada.
 
 ## Configuração 🏁
 3. Considerando ambiente Windows, após instalado, abra o projeto no CMD e execute: python -m venv .venv, seguido de: .venv\Scripts\activate
