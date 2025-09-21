@@ -1,4 +1,4 @@
-# Ignora diretórios desnecessários
+# Ignora diretórios desnecessários.
 /.venv
 __pycache__
 /.pytest_cache
