@@ -27,7 +27,6 @@ def test_valid_register_without_money(page, web_page, test_data, user_password):
     )
     web_page.check_success_account_creation('criada com sucesso')
 
-
 def test_valid_register_with_money(page, web_page, test_data, user_password):
     """"
         CT-02: Validar cadastro de conta com saldo 
@@ -53,7 +52,6 @@ def test_valid_register_with_money(page, web_page, test_data, user_password):
         password=user_password
     )
     web_page.check_success_account_creation('criada com sucesso')
-
 
 def test_invalid_register(page, web_page, test_data, user_password):
     """"

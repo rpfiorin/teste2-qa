@@ -4,11 +4,11 @@ class BasePage:
         self.page = page
         self.button_go_to_register = page.get_by_text("Registrar")
 
-
     """"
         Métodos para acesso dos conteudos presentes antes da autenticação no 
         BugBank.
     """
+
     def access_home(self):
         self.page.goto('/#')
 

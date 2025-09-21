@@ -13,12 +13,11 @@ load_dotenv()
 @pytest.fixture
 def context(browser):
     web_context = browser.new_context(base_url='https://bugbank.netlify.app',
-        record_video_dir='videos'
-    )
+                                      record_video_dir='videos'
+                                      )
     # Gera contexto para poder ser utilizado em todos os testes.
     yield web_context
     web_context.close()
-
 
 @pytest.fixture
 def tab(context):
@@ -28,7 +27,6 @@ def tab(context):
 
     pages.close()
 
-
 @pytest.fixture
 def web_page(page: Page):
     # Este método serve como hook para que a index seja visitada primeiramente.
@@ -36,7 +34,6 @@ def web_page(page: Page):
     tab_page.access_home()
 
     yield tab_page
-
 
 """
     Com scope='session', os arquivos abaixo sao lidos apenas uma vez para todas 
@@ -51,7 +48,6 @@ def test_data():
 
     # Retorna os dados carregados como um dicionário
     return data
-
 
 @pytest.fixture(scope="session")
 def user_password():
