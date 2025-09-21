@@ -6,7 +6,7 @@ from playwright.sync_api import expect
 
 class RegistrationPage(BasePage):
     def __init__(self, page):
-        # carrega mapeamento pelo arquivo base_page ao instanciar
+        # carrega mapeamento pelo arquivo base_page ao instanciar esta page
         super().__init__(page)
 
         self.button_back = page.locator("#btnBackButton")

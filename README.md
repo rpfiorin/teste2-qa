@@ -2,7 +2,7 @@
   <img src="./.github/logo.png" alt="poster">
 </p>
 
-# Teste prático - Automação de testes Web com playwright em Python (cadastro no BugBank)
+# Automação de testes Web com playwright em Python (cadastro no BugBank)
 
 ## Preparação 📍
 1. Primeiramente, clone este projeto com opção HTTPS ou SSH.
