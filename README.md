@@ -21,6 +21,7 @@
    
    Para executar em modo headless: _pytest -o "addopts=" --browser=nome-browser-suportado_
 
+## Extra ➕
 5. Na pasta 'videos' temos evidências dos casos de teste executados previamente, nos navegadores Chrome e Firefox.
 OBS: Toda a codificação do projeto foi comentada para fácil compreensão e documentação (exceto arquivos gerados automaticamente), de acordo com boas práticas da PEP 8. 
 
