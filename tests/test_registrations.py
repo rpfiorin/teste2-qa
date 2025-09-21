@@ -9,7 +9,7 @@ def test_valid_register_without_money(page, web_page, test_data, user_password):
             Verificar se o sistema permite o cadastro de um novo cliente com
             dados válidos mas sem saldo, resultando em uma mensagem de sucesso.
 
-        Pre-condicoes:
+        Pre-condições:
         - Acessar tela de registro.
 
         Resultado esperado:
@@ -34,9 +34,9 @@ def test_valid_register_with_money(page, web_page, test_data, user_password):
         
         Objetivo
             Verificar se o sistema permite o cadastro de um novo cliente com
-            dados validos e saldo, resultando em uma mensagem de sucesso.
+            dados válidos e saldo, resultando em uma mensagem de sucesso.
 
-        Pre-condicoes:
+        Pré-condições:
         - Acessar tela de registro.
 
         Resultado esperado:
@@ -61,9 +61,9 @@ def test_invalid_register(page, web_page, test_data, user_password):
         
         Objetivo
             Verificar se o sistema permite o cadastro de um novo cliente com
-            dados invalidos, resultando em uma mensagem de sucesso.
+            dados inválidos, resultando em uma mensagem de sucesso.
 
-        Pre-condicoes:
+        Pre-condições:
         - Acessar tela de registro.
 
         Resultado esperado:

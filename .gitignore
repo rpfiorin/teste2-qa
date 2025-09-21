@@ -1,4 +1,4 @@
-# ignora
+# Ignora diretórios
 /.venv
 __pycache__
 /.pytest_cache

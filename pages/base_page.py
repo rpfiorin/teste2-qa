@@ -1,13 +1,13 @@
 class BasePage:
     def __init__(self, page):
-        # define elementos ao instanciar page
+        # Define elementos ao instanciar page.
         self.page = page
         self.button_go_to_register = page.get_by_text("Registrar")
 
 
     """"
-        Metodos para acesso dos conteudos presentes antes da autenticacao no 
-        BugBank
+        Métodos para acesso dos conteudos presentes antes da autenticação no 
+        BugBank.
     """
     def access_home(self):
         self.page.goto('/#')
