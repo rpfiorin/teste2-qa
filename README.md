@@ -15,7 +15,7 @@
                                          seguido de _playwright install_ (para configurar as dependências do playwright).
 
 ## Execução ⚡
-4. Confira a massa de teste que deseja ser utilizada (dados do cliente), no arquivo data/users.json 
+4. Confira a massa de teste que deseja ser utilizada (dados do cliente), no arquivo 'data/users.json'.
 
    Para executar de forma assistida: _pytest --browser=nome-browser-suportado_
    
